@@ -98,7 +98,7 @@ function setup_search() {
     let nodes = Array.from(trees).reduce((a, b) => { a.push(...b.querySelectorAll('.node.tech')); return a; }, []);
     nodes = nodes.reduce((a, b) =>  {
         let the_text = '';
-        b.querySelectorAll('.node-name, .extra-data .tooltip-content:not(.prerequisites)').forEach(data => the_text += data.innerText);
+        b.querySelectorAll('.Node.textContent, .extra-data .tooltip-content:not(.prerequisites)').forEach(data => the_text += data.innerText);
         a.push({ node: b, text: the_text });
         return a;
     }, []);
