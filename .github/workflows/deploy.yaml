@@ -33,4 +33,4 @@ jobs:
         run: |
           echo $GITHUB_WORKSPACE
           ls -lha
-          scp $GITHUB_WORKSPACE/* ${{ secrets.SSH_USER }}@${{secrets.SSH_HOST }}:/var/www/tech-tree.contrastellar.com/public_html
+          scp * ${{ secrets.SSH_USER }}@${{secrets.SSH_HOST }}:/var/www/tech-tree.contrastellar.com/public_html
