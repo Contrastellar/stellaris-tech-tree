@@ -29,8 +29,8 @@ jobs:
           echo $whoami
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
           
-      - name: Deploy with scp to '/var/www/' on hemisphere
+      - name: Deploy with rsync to '/var/www/' on hemisphere
         run: |
           echo $GITHUB_WORKSPACE
           ls -lha
-          scp $GITHUB_WORKSPACE/* ${{ secrets.SSH_USER }}@${{secrets.SSH_HOST }}:/var/www/tech-tree.contrastellar.com/public_html
+          rsync -avz $GITHUB_WORKSPACE ${{ secrets.SSH_USER }}@${{secrets.SSH_HOST }}:/var/www/tech-tree.contrastellar.com/public_html
